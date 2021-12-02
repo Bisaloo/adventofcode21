@@ -1,3 +1,4 @@
 ^\.aoccookie$
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^\.github$
