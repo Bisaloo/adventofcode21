@@ -18,3 +18,5 @@ Imports:
 Suggests: 
     testthat (>= 3.0.0)
 URL: https://bisaloo.github.io/adventofcode21
+Remotes:
+    tjmahr/aoc
