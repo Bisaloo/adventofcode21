@@ -1,0 +1,13 @@
+Package: adventofcode21
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person("Hugo", "Gruson", , "hugo.gruson+R@normalesup.org", role = c("aut", "cre", "cph"),
+           comment = c(ORCID = "0000-0002-4094-1476"))
+Description: What the package does (one paragraph).
+License: GPL-3
+Config/testthat/edition: 3
+Encoding: UTF-8
+Language: en-GB
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2.9000
