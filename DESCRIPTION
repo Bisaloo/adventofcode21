@@ -13,7 +13,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2.9000
 Imports: 
     aoc,
-    RcppRoll
+    RcppRoll,
+    tibble
 Suggests: 
     testthat (>= 3.0.0)
 URL: https://bisaloo.github.io/adventofcode21
