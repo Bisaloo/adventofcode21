@@ -89,9 +89,24 @@
 #'
 #' **Part Two**
 #'
-#' *(Use have to manually add this yourself.)*
+#' On the other hand, it might be wise to try a different strategy: [let
+#' the giant squid
+#' win]{title="That's 'cuz a submarine don't pull things' antennas out of their
+#' sockets when they lose. Giant squid are known to do that."}.
 #'
-#' *(Try using `convert_clipboard_html_to_roxygen_md()`)*
+#' You aren\'t sure how many bingo boards a giant squid could play at once,
+#' so rather than waste time counting its arms, the safe thing to do is to
+#' *figure out which board will win last* and choose that one. That way, no
+#' matter which boards it picks, it will win for sure.
+#'
+#' In the above example, the second board is the last to win, which happens
+#' after `13` is eventually called and its middle column is completely
+#' marked. If you were to keep playing until this point, the second board
+#' would have a sum of unmarked numbers equal to `148` for a final score of
+#' `148 * 13 = 1924`.
+#'
+#' Figure out which board will win last. *Once it wins, what would its
+#' final score be?*
 #'
 #' @param x some data
 #' @return For Part One, `f04a(x)` returns .... For Part Two,
@@ -99,7 +114,7 @@
 #' @export
 #' @examples
 #' f04a(example_data_04())
-#' f04b()
+#' f04b(example_data_04())
 f04a <- function(x) {
 
   wins <- vapply(
@@ -137,6 +152,18 @@ get_winning_score <- function(board, draw, winning_round) {
 #' @rdname day04
 #' @export
 f04b <- function(x) {
+
+  wins <- vapply(
+    x[["boards"]],
+    get_winning_round, x[["draw"]],
+    FUN.VALUE = numeric(1)
+  )
+
+  get_winning_score(
+    x[["boards"]][[which.max(wins)]],
+    draw = x[["draw"]],
+    winning_round = max(wins)
+  )
 
 }
 
