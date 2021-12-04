@@ -71,47 +71,50 @@ Calculate the horizontal position and depth you would have after
 following the planned course. \emph{What do you get if you multiply your
 final horizontal position by your final depth?}
 
-\strong{Part Two}
+** Part Two **
 
-Based on your calculations, the planned course doesn't seem to make any
+Based on your calculations, the planned course doesn\'t seem to make any
 sense. You find the submarine manual and discover that the process is
 actually slightly more complicated.
 
-In addition to horizontal position and depth, you'll also need to track a
-third value, aim, which also starts at 0. The commands also mean something
-entirely different than you first thought:
+In addition to horizontal position and depth, you\'ll also need to track
+a third value, \emph{aim}, which also starts at \code{0}. The commands also mean
+something entirely different than you first thought:
 \itemize{
-\item \verb{down X} \strong{increases} your aim by \code{X} units.
-\item \verb{up X} \strong{decreases} your aim by \code{X} units.
+\item \verb{down X} \emph{increases} your aim by \code{X} units.
+\item \verb{up X} \emph{decreases} your aim by \code{X} units.
 \item \verb{forward X} does two things:
 \itemize{
 \item It increases your horizontal position by \code{X} units.
-\item It increases your depth by your aim \strong{multiplied by} \code{X}.
+\item It increases your depth by your aim \emph{multiplied by} \code{X}.
 }
 }
 
-Again note that since you're on a submarine, \code{down} and \code{up} do the opposite
-of what you might expect: "down" means aiming in the positive direction.
+Again note that since you\'re on a submarine, \code{down} and \code{up} do the
+opposite of what you might expect: \"down\" means aiming in the positive
+direction.
 
 Now, the above example does something different:
 \itemize{
-\item forward 5 adds 5 to your horizontal
-position, a total of 5. Because your aim is 0, your depth does not
-change. down 5 adds 5 to your aim, resulting in a value of 5.
-\item forward 8 adds 8 to your horizontal position, a total of 13. Because your
-aim is 5, your depth increases by 8*5=40.
-\item up 3 decreases your aim by 3, resulting in a value of 2.
-\item down 8 adds 8 to your aim, resulting in a value of 10.
-\item forward 2 adds 2 to your horizontal position, a total of 15. Because your
-aim is 10, your depth increases by 2*10=20 to a total of 60.
+\item \verb{forward 5} adds \code{5} to your horizontal position, a total of \code{5}.
+Because your aim is \code{0}, your depth does not change.
+\item \verb{down 5} adds \code{5} to your aim, resulting in a value of \code{5}.
+\item \verb{forward 8} adds \code{8} to your horizontal position, a total of \code{13}.
+Because your aim is \code{5}, your depth increases by \code{8*5=40}.
+\item \verb{up 3} decreases your aim by \code{3}, resulting in a value of \code{2}.
+\item \verb{down 8} adds \code{8} to your aim, resulting in a value of \code{10}.
+\item \verb{forward 2} adds \code{2} to your horizontal position, a total of \code{15}.
+Because your aim is \code{10}, your depth increases by \code{2*10=20} to a
+total of \code{60}.
 }
 
-After following these new instructions, you would have a horizontal position
-of 15 and a depth of 60. (Multiplying these produces 900.) Using this new
-interpretation of the commands, calculate the horizontal position and depth
-you would have after following the planned course.
+After following these new instructions, you would have a horizontal
+position of \code{15} and a depth of \code{60}. (Multiplying these produces
+\code{900}.)
 
-\strong{What do you get if you multiply your final horizontal position by your
+Using this new interpretation of the commands, calculate the horizontal
+position and depth you would have after following the planned course.
+\emph{What do you get if you multiply your final horizontal position by your
 final depth?}
 }
 \examples{
