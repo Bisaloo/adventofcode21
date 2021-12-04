@@ -122,31 +122,38 @@ measurement.) In the example above, the changes are as follows:</p><div class="s
 <p>In this example, there are <em><code>7</code></em> measurements that are larger than the
 previous measurement.</p>
 <p><em>How many measurements are larger than the previous measurement?</em></p>
-<p><strong>Part Two</strong></p>
-<p>Considering every single measurement isn't as useful as you expected:
-there's just too much noise in the data. Instead, consider sums of a
-three-measurement sliding window. Again considering the above example:</p><div class="sourceCode"><pre><code>199 A
-200 A B
-208 A B C
-210   B C D
-200 E   C D
-207 E F   D
-240 E F G
-269   F G H
-260     G H
-263       H
+<p><strong>Part Two</strong></p><div class="section">
+<h3 id="-part-two-part-">\-\-- Part Two \-\-- #part2<a class="anchor" aria-label="anchor" href="#-part-two-part-"></a></h3>
+
+
+<p>Considering every single measurement isn\'t as useful as you expected:
+there\'s just too much noise in the data.</p>
+<p>Instead, consider sums of a <em>three-measurement sliding window</em>. Again
+considering the above example:</p><div class="sourceCode"><pre><code>199  A
+200  A B
+208  A B C
+210    B C D
+200  E   C D
+207  E F   D
+240  E F G
+269    F G H
+260      G H
+263        H
 </code></pre></div>
 
 <p>Start by comparing the first and second three-measurement windows. The
-measurements in the first window are marked A (199, 200, 208); their sum is
-199 + 200 + 208 = 607. The second window is marked B (200, 208, 210); its sum
-is 618. The sum of measurements in the second window is larger than the sum
-of the first, so this first comparison increased.</p>
-<p>Your goal now is to count the number of times the sum of measurements in this
-sliding window increases from the previous sum. So, compare A with B, then
-compare B with C, then C with D, and so on. Stop when there aren\'t enough
-measurements left to create a new three-measurement sum.</p>
-<p>In the above example, the sum of each three-measurement window is as follows:</p><div class="sourceCode"><pre><code>A: 607 (N/A - no previous sum)
+measurements in the first window are marked <code>A</code> (<code>199</code>, <code>200</code>, <code>208</code>);
+their sum is <code>199 + 200 + 208 = 607</code>. The second window is marked <code>B</code>
+(<code>200</code>, <code>208</code>, <code>210</code>); its sum is <code>618</code>. The sum of measurements in the
+second window is larger than the sum of the first, so this first
+comparison <em>increased</em>.</p>
+<p>Your goal now is to count <em>the number of times the sum of measurements
+in this sliding window increases</em> from the previous sum. So, compare <code>A</code>
+with <code>B</code>, then compare <code>B</code> with <code>C</code>, then <code>C</code> with <code>D</code>, and so on. Stop
+when there aren\'t enough measurements left to create a new
+three-measurement sum.</p>
+<p>In the above example, the sum of each three-measurement window is as
+follows:</p><div class="sourceCode"><pre><code>A: 607 (N/A - no previous sum)
 B: 618 (increased)
 C: 618 (no change)
 D: 617 (decreased)
@@ -156,9 +163,12 @@ G: 769 (increased)
 H: 792 (increased)
 </code></pre></div>
 
-<p>In this example, there are 5 sums that are larger than the previous sum.
-Consider sums of a three-measurement sliding window.</p>
-<p><em>How many sums are larger than the previous sum?</em></p>
+<p>In this example, there are <em><code>5</code></em> sums that are larger than the previous
+sum.</p>
+<p>Consider sums of a three-measurement sliding window. <em>How many sums are
+larger than the previous sum?</em></p>
+</div>
+
     </div>
 
     <div class="section level2">
