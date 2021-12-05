@@ -13,6 +13,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2.9000
 Imports: 
     aoc,
+    dplyr,
     RcppRoll,
     tibble
 Suggests: 
