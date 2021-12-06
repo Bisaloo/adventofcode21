@@ -90,9 +90,11 @@
 #'
 #' **Part Two**
 #'
-#' *(Use have to manually add this yourself.)*
+#' Suppose the lanternfish live forever and have unlimited food and space.
+#' Would they take over the entire ocean?
 #'
-#' *(Try using `convert_clipboard_html_to_roxygen_md()`)*
+#' After 256 days in the example above, there would be a total of
+#' `26984457539` lanternfish!
 #'
 #' @param x some data
 #' @return For Part One, `f06a(x)` returns .... For Part Two,
@@ -100,31 +102,41 @@
 #' @export
 #' @examples
 #' f06a(example_data_06())
-#' f06b()
+#' f06b(example_data_06())
 f06a <- function(x) {
 
+  x <- factor(x, seq(0, 8))
+
+  timers <- c(table(x))
+
   for (i in seq_len(80)) {
-   x <- spawn(x)
+    timers <- spawn(timers)
   }
 
-  return(length(x))
+  return(sum(timers))
+
 }
 
 
 #' @rdname day06
 #' @export
-spawn <- function(timers) {
+f06b <- function(x) {
 
-  timers <- timers - 1
+  x <- factor(x, seq(0, 8))
 
-  timers <- c(timers, rep_len(8, sum(timers == -1)))
-  timers[timers == -1] <- 6
+  timers <- c(table(x))
 
-  return(timers)
+  for (i in seq_len(256)) {
+    timers <- spawn(timers)
+  }
+
+  return(sum(timers))
+
 }
 
+spawn <- function(timers) {
 
-f06_helper <- function(x) {
+  return(setNames(timers[c(2:9, 1)]+c(0,0,0,0,0,0,timers[1],0,0), 0:8))
 
 }
 
