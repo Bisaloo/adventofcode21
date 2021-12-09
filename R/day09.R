@@ -107,6 +107,7 @@
 #' @examples
 #' f09a(example_data_09())
 #' f09b(example_data_09())
+#' f09_video(example_data_09())
 f09a <- function(x) {
 
   lows <- f09_find_lows(x)
@@ -153,6 +154,39 @@ f09_find_basin <- function(low, landscape) {
 
   # Count blue pixels
   return(sum(as.raster(basin) == "#0000ffff"))
+
+}
+
+#' @export
+f09_video <- function(x) {
+
+  # Dirty hack to convert binary matrix to bitmap array and then magick object
+  basins <- rep(apply(x != 9, 2, as.numeric), 3)
+  dim(basins) <- c(dim(x), 3)
+
+  landscape <- magick::image_read(basins)
+
+  lows <- which(f09_find_lows(x), arr.ind = TRUE)
+
+  # Convert lows to image coords instead of matrix coords
+  lows <- lows[, c(2,1)] - 1
+
+  imgs <- lapply(seq_len(nrow(lows)), function(i) {
+    img <- magick::image_fill(landscape, "red", paste0("+", lows[i,1], "+", lows[i,2]))
+    magick::image_transparent(img, "white")
+  })
+
+  # Randomize order and create groups of 15 to have a christmas lights effect
+  frames <- replicate(10, {
+    f <- purrr::reduce(imgs[sample(length(imgs), 15)], magick::image_composite, "Blend")
+    f <- magick::image_background(f, "green")
+    f <- magick::image_flatten(f)
+  })
+
+  frames <- do.call(c, frames)
+  frames <- magick::image_scale(frames, 400)
+
+  magick::image_animate(frames, fps = 1)
 
 }
 
