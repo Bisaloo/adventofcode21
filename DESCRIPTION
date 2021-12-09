@@ -16,6 +16,7 @@ Imports:
     dplyr,
     magick,
     RcppRoll,
+    slider,
     tibble
 Suggests: 
     testthat (>= 3.0.0)
