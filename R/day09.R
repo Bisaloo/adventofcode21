@@ -157,6 +157,10 @@ f09_find_basin <- function(low, landscape) {
 
 }
 
+#' Create christmas lights gif/video
+#'
+#' @param x puzzle input
+#'
 #' @export
 f09_video <- function(x) {
 
