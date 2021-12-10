@@ -107,7 +107,6 @@
 #' @examples
 #' f09a(example_data_09())
 #' f09b(example_data_09())
-#' f09_video(example_data_09())
 f09a <- function(x) {
 
   lows <- f09_find_lows(x)
