@@ -15,6 +15,7 @@ Imports:
     aoc,
     dplyr,
     magick,
+    purrr,
     RcppRoll,
     slider,
     tibble
