@@ -4,8 +4,8 @@ test_that("day11; puzzle 1", {
 
 })
 
-test_that("day11; puzzle 1", {
+test_that("day11; puzzle 2", {
 
-  expect_equal(f11a(example_data_11()), 195)
+  expect_equal(f11b(example_data_11()), 195)
 
 })
