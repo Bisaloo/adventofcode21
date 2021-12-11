@@ -17,6 +17,7 @@ Imports:
     magick,
     purrr,
     RcppRoll,
+    simecol,
     slider,
     tibble
 Suggests: 
