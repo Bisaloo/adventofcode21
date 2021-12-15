@@ -14,11 +14,14 @@ RoxygenNote: 7.1.2.9000
 Imports: 
     aoc,
     dplyr,
+    gdistance,
     magick,
     purrr,
+    raster,
     RcppRoll,
     simecol,
     slider,
+    sp,
     tibble
 Suggests: 
     testthat (>= 3.0.0)
